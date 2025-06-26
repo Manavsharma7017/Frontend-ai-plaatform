@@ -65,6 +65,7 @@ export const AdminQuestions: React.FC = () => {
           text: data.text,
           difficulty: data.difficulty,
           Explanation: data.Explanation,
+          // @ts-ignore
           DomainID: parseInt(data.domain_id),
         });
       } else {
@@ -72,6 +73,7 @@ export const AdminQuestions: React.FC = () => {
           text: data.text,
           difficulty: data.difficulty,
           Explanation: data.Explanation,
+          // @ts-ignore
           DomainID: parseInt(data.domain_id),
         });
       }
