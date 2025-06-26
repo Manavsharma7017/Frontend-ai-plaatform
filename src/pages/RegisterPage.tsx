@@ -22,7 +22,7 @@ export const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate('/');
+      navigate('/About');
     }
   }, [auth, navigate]);
 
