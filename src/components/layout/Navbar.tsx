@@ -14,7 +14,7 @@ import { Button } from '../ui/Button';
 import Timer from './Timer';
 import { sessionState } from '../../store/session';
 import { toast } from 'react-toastify';
-import { clearQuestionData, clearsessionData } from '../../utils/auth';
+import { clearAuthData, clearQuestionData, clearsessionData } from '../../utils/auth';
 import { sessionService } from '../../services/sesssion';
 import { questionDataState } from '../../store/questionData';
 import { userQuestionService } from '../../services/UserQuestion';
@@ -56,10 +56,13 @@ export const Navbar: React.FC = () => {
       clearQuestionData();
       toast.success("Session ended successfully");
     } catch (error) {
+          clearsessionData();
+      clearQuestionData();
+      clearAuthData();
+      navigate('/login');
       console.error("Error ending session:", error);
       toast.error("Failed to end session. Please try again.");
-      clearsessionData();
-      clearQuestionData();
+  
     } finally {
       navigate('/app');
     }

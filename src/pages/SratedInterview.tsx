@@ -46,7 +46,7 @@ export const SratedInterview = () => {
       clearsessionData();
       clearQuestionData();
     } finally {
-      navigate("/app");
+      navigate("/app/About");
     }
   };
 

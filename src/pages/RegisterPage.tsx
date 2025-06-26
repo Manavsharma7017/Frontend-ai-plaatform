@@ -22,7 +22,7 @@ export const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate('/About');
+      navigate('/app/About');
     }
   }, [auth, navigate]);
 
@@ -56,7 +56,7 @@ export const RegisterPage: React.FC = () => {
       });
 
       toast.success('Registration successful! 🎉');
-      navigate('/');
+      navigate('/app/About');
     } catch (err: any) {
       const message = err.response?.data?.message || 'An error occurred during registration.';
       toast.error(message);

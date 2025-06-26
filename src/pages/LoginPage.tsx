@@ -38,7 +38,7 @@ export const LoginPage: React.FC = () => {
       });
 
       toast.success(`Welcome ${user.name || ''}!`);
-      navigate('/About');
+      navigate('/app/About');
     } catch (err: any) {
       console.error('Login error:', err);
       toast.error(err?.response?.data?.message || 'Login failed. Please try again.');
