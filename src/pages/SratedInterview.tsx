@@ -43,6 +43,8 @@ export const SratedInterview = () => {
     } catch (error) {
       console.error("Error ending session:", error);
       toast.error("Failed to end session. Please try again.");
+      clearsessionData();
+      clearQuestionData();
     } finally {
       navigate("/app");
     }

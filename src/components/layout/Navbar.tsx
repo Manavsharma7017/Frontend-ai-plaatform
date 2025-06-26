@@ -58,6 +58,8 @@ export const Navbar: React.FC = () => {
     } catch (error) {
       console.error("Error ending session:", error);
       toast.error("Failed to end session. Please try again.");
+      clearsessionData();
+      clearQuestionData();
     } finally {
       navigate('/app');
     }
@@ -237,14 +239,14 @@ export const Navbar: React.FC = () => {
                 </Button>
               </div>
             ) : (
-             <div className="space-y-3 w-full max-w-sm mx-auto px-4">
-  <Link to="/login">
-    <Button size="sm" className="w-full">Login</Button>
-  </Link>
-  <Link to="/register">
-    <Button size="sm" className="w-full">Get Started</Button>
-  </Link>
-</div>
+             <div className="space-y-2 flex flex-col">
+                <Link to="/login">
+                  <Button size="sm" className="w-full">Login</Button>
+                </Link>
+                <Link to="/register">
+                  <Button size="sm" className="w-full">Get Started</Button>
+                </Link>  
+              </div> 
 
             )}
           </div>
