@@ -38,7 +38,20 @@ export const InterviewSessionId = () => {
   const loaddata = async () => {
     try {
       const data = await sessionService.getSessionById(sessionId || "");
-      setSessionData(data );
+      const dataorg :SessionByID ={
+        id: data.id,
+        domain_id: data.domain_id,
+        domain_name: data.domain_name,
+        description: data.description,
+        Questions: data.Questions.map((question: any) => ({
+          ID: question.id,
+          Text: question.text,
+          Explanation: question.Explanation,
+          Difficulty: question.difficulty as 'EASY' | 'MEDIUM' | 'HARD',
+          Questionnumber: question.Questionnumber,
+        })),
+      }
+      setSessionData(dataorg );
     } catch (error) {
       toast.error("Failed to load session data");
       console.error("Error loading session data:", error);

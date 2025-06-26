@@ -95,9 +95,11 @@ export interface LoginRequest {
 
 export interface RegisterRequest {
   email: string;
-  username: string;
+  username?: string;
+  name?: string; // Only for user registration
   password: string;
-  AdminPassword?: string; // Only for admin registration
+  AdminPassword?: string; 
+  role?: 'ADMIN' | 'EDITOR'; // Only for admin registration
 }
 
 export interface CreateSessionRequest {
