@@ -6,11 +6,12 @@ import { MessageSquare, ArrowLeft } from "lucide-react";
 import { Card } from "../components/ui/Card";
 import { Badge } from "../components/ui/Badge";
 
-interface SessionQuestion {
-  id: string;
-  text: string;
+
+interface SessionQuestion2 {
+  ID: string;
+  Text: string;
   Explanation: string;
-  difficulty: 'EASY' | 'MEDIUM' | 'HARD';
+  Difficulty: 'EASY' | 'MEDIUM' | 'HARD';
   Questionnumber: number;
 }
 
@@ -19,7 +20,7 @@ interface SessionByID {
   domain_id: number;
   domain_name: string;
   description: string;
-  Questions: SessionQuestion[];
+  Questions: SessionQuestion2[];
 }
 
 export const InterviewSessionId = () => {
@@ -37,7 +38,7 @@ export const InterviewSessionId = () => {
   const loaddata = async () => {
     try {
       const data = await sessionService.getSessionById(sessionId || "");
-      setSessionData(data);
+      setSessionData(data );
     } catch (error) {
       toast.error("Failed to load session data");
       console.error("Error loading session data:", error);

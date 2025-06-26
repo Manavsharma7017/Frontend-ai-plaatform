@@ -42,11 +42,11 @@ export const sessionService={
         await apiClient.patch(`sessions/${sessionId}/complete`);
         clearsessionData();
     },
-    async getSessionById(sessionId: string): Promise<sessionbyID> {
-        if (!sessionId) {
+    async getSessionById(SessionId: string): Promise<sessionbyID> {
+        if (!SessionId) {
             throw new Error("Session ID is required to fetch session details.");
         }
-        const response = await apiClient.get(`/sessions/${sessionId}`);
+        const response = await apiClient.get(`/sessions/${SessionId}`);
         const s = response.data.session;    
         const session: sessionbyID = {
             id: s.id,

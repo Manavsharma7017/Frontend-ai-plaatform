@@ -49,6 +49,7 @@ export const Navbar: React.FC = () => {
         id: "",
         domain: { id: 0, name: "" },
         description: "",
+        userDomain: 0,
         started_at: "",
       });
       clearsessionData();
@@ -230,7 +231,7 @@ export const Navbar: React.FC = () => {
                   <User className="h-4 w-4 text-gray-600" />
                   <span className="text-sm">{user.name || user.email}</span>
                 </div>
-                <Button onClick={handleLogout} variant="destructive" size="sm" className="w-full">
+                <Button onClick={handleLogout}  size="sm" className="w-full">
                   <LogOut className="h-4 w-4" />
                   Logout
                 </Button>

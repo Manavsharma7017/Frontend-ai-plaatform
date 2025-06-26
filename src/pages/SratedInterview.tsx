@@ -33,6 +33,7 @@ export const SratedInterview = () => {
         id: "",
         domain: { id: 0, name: "" },
         description: "",
+        userDomain: 0,
         started_at: "",
       });
       await userQuestionService.deleteUserQuestion(QuestionData.id);
@@ -89,7 +90,7 @@ export const SratedInterview = () => {
       });
 
       const feedback = await responseService.createFeedback({
-        ResponceId: response.responceID,
+        ResponceId: response.responceID||"",
         Domain: sessionValue.domain.name,
         SessionID: sessionValue.id,
         Question: QuestionData.text,

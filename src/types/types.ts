@@ -54,9 +54,10 @@ export interface Session {
   started_at: string;
 }
 export interface Response {
-  responceID: string;
+  responceID?: string;
   sessionID: string;
-  questionID: string;
+  questionID?: string;
+  UserQuestionID?: string;
   answer: string;
   submitted_at: string;
 }
