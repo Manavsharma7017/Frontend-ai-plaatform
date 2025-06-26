@@ -237,14 +237,15 @@ export const Navbar: React.FC = () => {
                 </Button>
               </div>
             ) : (
-              <div className="space-y-2">
-                <Link to="/login">
-                  <Button size="sm" className="w-full">Login</Button>
-                </Link>
-                <Link to="/register">
-                  <Button size="sm" className="w-full">Get Started</Button>
-                </Link>
-              </div>
+             <div className="space-y-3 w-full max-w-sm mx-auto px-4">
+  <Link to="/login">
+    <Button size="sm" className="w-full">Login</Button>
+  </Link>
+  <Link to="/register">
+    <Button size="sm" className="w-full">Get Started</Button>
+  </Link>
+</div>
+
             )}
           </div>
         )}

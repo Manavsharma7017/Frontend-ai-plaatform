@@ -207,7 +207,7 @@ export const LandingPage: React.FC = () => {
       <footer className="py-12 bg-gray-800 text-white rounded-2xl">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm mb-4">© 2023 AI Interview Prep. All rights reserved.</p>
-          <p className="text-sm">Made with ❤️ by the Manav Sharam</p>
+          <p className="text-sm">Made with ❤️ by the Manav Sharma and ideated by Kushagra Srivastava</p>
         </div>
       </footer>
     </div>
