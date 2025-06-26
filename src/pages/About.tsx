@@ -110,7 +110,7 @@ export const About: React.FC = () => {
                 <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
                   <li><strong>Frontend:</strong> React, TypeScript, TailwindCSS</li>
                   <li><strong>Backend:</strong> Go, Fiber, GORM, PostgreSQL</li>
-                  <li><strong>AI Engine:</strong> Python (LangChain + Gemini) via gRPC</li>
+                  <li><strong>AI Engine:</strong> Python (LangChain + Gemini) via gRPC initally but now it is use https ${`because of development issues`}</li>
                   <li><strong>Infra:</strong> Docker containers for frontend, Go backend, Python AI server</li>
                 </ul>
               </div>
