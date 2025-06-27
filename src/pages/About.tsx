@@ -14,7 +14,7 @@ export const About: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 py-12 px-4">
       <div className="w-full max-w-3xl space-y-8">
-        {/* Toggle Buttons like LoginPage */}
+        {/* Toggle Buttons */}
         <div className="flex justify-center space-x-4">
           <button
             onClick={() => setActiveTab("me")}
@@ -110,7 +110,7 @@ export const About: React.FC = () => {
                 <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
                   <li><strong>Frontend:</strong> React, TypeScript, TailwindCSS</li>
                   <li><strong>Backend:</strong> Go, Fiber, GORM, PostgreSQL</li>
-                  <li><strong>AI Engine:</strong> Python (LangChain + Gemini) via gRPC initally but now it is useing https ${`because of development issues grpc version is on github`}</li>
+                  <li><strong>AI Engine:</strong> Python (LangChain + Gemini) via gRPC initially but now using HTTPS {`(because of development issues, the gRPC version is on GitHub)`}</li>
                   <li><strong>Infra:</strong> Docker containers for frontend, Go backend, Python AI server</li>
                 </ul>
               </div>
