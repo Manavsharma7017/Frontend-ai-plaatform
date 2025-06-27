@@ -8,7 +8,7 @@ import { InterviewForm } from '../components/forms/IntervieewFrom';
 import { domainService } from '../services/domains';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { sessionState } from '../store/session';
-import { clearsessionData } from '../utils/auth';
+import { clearQuestionData, clearsessionData } from '../utils/auth';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { userQuestionService } from '../services/UserQuestion';
@@ -125,8 +125,12 @@ export const InterviewPage = () => {
         userDomain: 0,
       });
       clearsessionData();
+      clearQuestionData();
       await loadData();
     } catch (error) {
+      clearsessionData();
+      clearQuestionData();
+      navigate('/');
       console.error('Error ending session:', error);
     } finally {
       setIsSubmitting(false);

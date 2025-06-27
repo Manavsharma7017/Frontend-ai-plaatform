@@ -58,13 +58,13 @@ export const Navbar: React.FC = () => {
     } catch (error) {
           clearsessionData();
       clearQuestionData();
-      clearAuthData();
-      navigate('/login');
+     
+      navigate('/');
       console.error("Error ending session:", error);
       toast.error("Failed to end session. Please try again.");
   
     } finally {
-      navigate('/app');
+      navigate('/');
     }
   };
 
