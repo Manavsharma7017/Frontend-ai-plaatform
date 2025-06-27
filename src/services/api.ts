@@ -1,19 +1,13 @@
 import axios from 'axios';
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-  const API_URL = import.meta.env.VITE_API_URL || 'v1';
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 }); 
-export const apiClient2 = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+
 
 // Request interceptor to add auth token
 apiClient.interceptors.request.use(

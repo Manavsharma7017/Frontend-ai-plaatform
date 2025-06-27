@@ -14,9 +14,12 @@ import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { domains, features, stats, testimonials } from '../constants/Landingconstant';
 import { toast } from 'react-toastify';
-
+ const API_URL = import.meta.env.VITE_API_URL;
 export const LandingPage: React.FC = () => {
   useEffect(() => {
+     fetch(API_URL)
+    .then((res) => console.log("Backend pinged:", res.status))
+    .catch((err) => console.error("Backend ping failed:", err));
     toast.info('Due to Free deployment, the backend may take a few seconds to load.',)
   }, []);
   return (
