@@ -41,6 +41,7 @@ export const LoginPage: React.FC = () => {
       navigate('/app/About');
     } catch (err: any) {
       console.error('Login error:', err);
+       navigate('/login'); // Redirect to login on error
       toast.error(err?.response?.data?.message || 'Login failed. Please try again.');
     } finally {
       setIsLoading(false);
