@@ -186,17 +186,14 @@ export const AdminQuestions: React.FC = () => {
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {editingQuestion ? 'Edit Question' : 'Create New Question'}
           </h3>
-          <QuestionForm
-            onSubmit={handleSubmit}
-            isLoading={false}
-            domains={domains}
-            initialData={editingQuestion || undefined}
-          />
-          <div className="mt-4">
-            <Button variant="outline" onClick={cancelEdit}>
-              Cancel
-            </Button>
-          </div>
+         <QuestionForm
+  onSubmit={handleSubmit}
+  onCancel={cancelEdit} // 🟢 Add this
+  isLoading={false}
+  domains={domains}
+  initialData={editingQuestion || undefined}
+/>
+
         </Card>
       )}
 

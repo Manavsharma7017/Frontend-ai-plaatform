@@ -15,6 +15,7 @@ interface QuestionFormData {
 
 interface QuestionFormProps {
   onSubmit: (data: QuestionFormData) => Promise<void>;
+  onCancel: () => void; // 🟢 Add this prop
   isLoading: boolean;
   domains: Domain[];
   initialData?: Partial<Question>;
@@ -22,6 +23,7 @@ interface QuestionFormProps {
 
 export const QuestionForm: React.FC<QuestionFormProps> = ({
   onSubmit,
+  onCancel, // 🟢 Destructure it
   isLoading,
   domains,
   initialData,
@@ -113,10 +115,20 @@ export const QuestionForm: React.FC<QuestionFormProps> = ({
           )}
         </div>
 
-        {/* Submit Button */}
-        <Button type="submit" isLoading={isLoading} className="w-full">
-          {initialData ? 'Update Question' : 'Create Question'}
-        </Button>
+        {/* Buttons */}
+        <div className="flex justify-between gap-2">
+          <Button type="submit" isLoading={isLoading} className="flex-1">
+            {initialData ? 'Update Question' : 'Create Question'}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={onCancel}
+            className="flex-1"
+          >
+            Cancel
+          </Button>
+        </div>
       </form>
     </div>
   );
