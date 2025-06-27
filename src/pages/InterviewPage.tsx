@@ -13,6 +13,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { userQuestionService } from '../services/UserQuestion';
 import { questionDataSelector } from '../store/questionData';
+import { apiClient2 } from '../services/api';
 
 export const InterviewPage = () => {
   const [sessions, setSessions] = useState<AllsesssionsResponse[]>([]);
@@ -110,6 +111,8 @@ export const InterviewPage = () => {
       console.error('Error creating session:', error);
     } finally {
       setIsSubmitting(false);
+      apiClient2.get(``);
+
     }
   };
 
